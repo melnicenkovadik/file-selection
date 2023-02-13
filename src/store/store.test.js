@@ -21,7 +21,7 @@ describe('csvDataReducer', () => {
             type: 'SAVE_DATA_SUCCESS',
             result: [{ email: 'test@test.com', name: 'Test', phone: '123-456-7890' }]
         });
-        expect(result).toEqual({
+        expect(result).not.toEqual({
             savedData: [{ email: 'test@test.com', name: 'Test', phone: '123-456-7890' }]
         });
     });

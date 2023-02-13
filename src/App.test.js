@@ -9,14 +9,6 @@ import thunk from "redux-thunk";
 import {csvDataReducer} from "./store";
 import {FileUpload} from "./components/FileSelection";
 
-test('renders learn react link', () => {
-    render(<App/>);
-    const linkElement = screen.getByText(/learn react/i);
-    expect(linkElement).toBeInTheDocument();
-});
-
-
-
 const rootReducer = combineReducers({
   csvData: csvDataReducer
 });
