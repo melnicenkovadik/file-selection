@@ -21,10 +21,10 @@ const SavedData = (props) => {
                             </thead>
                             <tbody>
                             {savedData?.map((data) => (
-                                <tr key={data?.email}>
-                                    <td>{data?.email}</td>
-                                    <td>{data?.name}</td>
-                                    <td>{data?.phone}</td>
+                                <tr data-testid="table-row" key={data?.email}>
+                                    <td >{data?.email}</td>
+                                    <td >{data?.name}</td>
+                                    <td >{data?.phone}</td>
                                 </tr>
                             ))}
                             </tbody>

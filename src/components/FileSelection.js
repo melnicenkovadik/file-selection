@@ -33,7 +33,11 @@ export const FileUpload = () => {
 
     return (
         <div>
-            <input type="file" onChange={handleFileSelect}/>
+            <label htmlFor="file">Upload a file</label>
+            <input
+                id="file"
+                type="file"
+                onChange={handleFileSelect}/>
             {headers.length > 0 && (
                 <CSVHeadersMapper
                     showModal={showModal}
@@ -120,20 +124,20 @@ const validateData = (mappedHeaders) => {
                     return;
                 }
 
-                // if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(mappedRow.email)) {
-                //     isValid = false;
-                //     return;
-                // }
-                //
-                // if (!/^[a-zA-Z]+$/.test(mappedRow.name)) {
-                //     isValid = false;
-                //     return;
-                // }
-                //
-                // if (!/^\d{10}$/.test(mappedRow.phone)) {
-                //     isValid = false;
-                //     return;
-                // }
+                if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(mappedRow.email)) {
+                    isValid = false;
+                    return;
+                }
+
+                if (!/^[a-zA-Z]+$/.test(mappedRow.name)) {
+                    isValid = false;
+                    return;
+                }
+
+                if (!/^\d{10}$/.test(mappedRow.phone)) {
+                    isValid = false;
+                    return;
+                }
 
                 mappedData.push(mappedRow);
             });
@@ -175,7 +179,7 @@ const saveDataFailed = (error) => ({
 });
 
 
-const setCSVData = (data) => {
+export const setCSVData = (data) => {
     return {
         type: 'SET_CSV_DATA',
         data

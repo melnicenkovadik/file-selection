@@ -7,7 +7,7 @@ const initialState = {
     csvData: []
 };
 
-const csvDataReducer = (state = initialState, action) => {
+export const csvDataReducer = (state = initialState, action) => {
     switch (action.type) {
         case "SET_CSV_DATA":
             return {
